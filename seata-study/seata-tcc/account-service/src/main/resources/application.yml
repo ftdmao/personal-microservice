@@ -1,0 +1,70 @@
+spring:
+  application:
+    name: account-service
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.129.135:4002/mysql?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+dubbo:
+  scan:
+    base-packages: com.mjw.service
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: kryo
+  registry:
+    address: nacos://192.168.129.135
+    port: 8848
+    parameters[namespace]: 84c72520-4b60-4455-8f89-8538b545eef9
+
+server:
+  port: 9002
+
+
+# seata 配置
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  # 分布式事务分组
+  tx-service-group: ${spring.application.name}-tx-group
+  # seata配置中心
+  config:
+    type: nacos
+    nacos:
+      namespace: 84c72520-4b60-4455-8f89-8538b545eef9  #在安装seata目录下的conf中的register.conf的config节点中下的nacos节点的namespace。如果没有配置 默认public空间
+      # nacos配置中心地址
+      server-addr: 192.168.129.135:8848
+      # 分组
+      group: 'SEATA_GROUP'
+      # nacos的账号和密码
+      userName: 'nacos'
+      password: 'nacos'
+      data-id: 'seataServer.properties'
+  # seata的注册中心
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 192.168.129.135:8848
+      namespace: 84c72520-4b60-4455-8f89-8538b545eef9  #在安装seata目录下的conf中的register.conf的register节点中下的nacos节点的namespace。如果没有配置 默认public空间
+      userName: 'nacos'
+      password: 'nacos'
