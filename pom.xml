@@ -12,6 +12,7 @@
         <module>dependencies</module>
         <module>seata-study</module>
         <module>java-patterns</module>
+        <module>algorithm</module>
     </modules>
 
     <properties>
