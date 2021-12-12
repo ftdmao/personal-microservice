@@ -6,11 +6,9 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * @Module : 繁殖云--XX应用--XX模块--XX单据
- * @Description :
- * @Date : 2021/12/12
- * @Author : jiawei_mao
- **/
+ * https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/
+ * 剑指 Offer 32 - III. 从上到下打印二叉树 III
+ */
 public class Solution_32_3 {
 
     public static class TreeNode {
