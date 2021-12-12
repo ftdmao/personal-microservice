@@ -1,16 +1,9 @@
 package com.mjw.offer;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
- * @Module : 繁殖云--XX应用--XX模块--XX单据
- * @Description :
- * @Date : 2021/12/8
- * @Author : jiawei_mao
- **/
+ * 35.复杂链表的复制
+ *https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/
+ */
 public class Solution_35 {
     static class Node {
         int val;
