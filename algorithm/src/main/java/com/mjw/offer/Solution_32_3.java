@@ -32,7 +32,7 @@ public class Solution_32_3 {
         while (!queue.isEmpty()) {
             /**
              * 因为每一行都要变序
-             * 所以出栈后不能立刻入栈，要等整一行的都出栈完之后再决定进栈的顺序
+             * 所以出栈后不能立刻入队，要等整一行的都出栈完之后再决定进栈的顺序
              */
             List<TreeNode> nodeList = new ArrayList<>();
             List<Integer> temp = new ArrayList<>();
@@ -44,7 +44,7 @@ public class Solution_32_3 {
             result.add(temp);
 
             /**
-             * 决定进栈的顺序
+             * 决定进队的顺序
              */
             for (int i = nodeList.size() - 1; i >= 0; i--) {
                 TreeNode node = nodeList.get(i);
