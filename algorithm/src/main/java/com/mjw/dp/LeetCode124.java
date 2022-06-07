@@ -1,4 +1,4 @@
-package com.mjw.offer;
+package com.mjw.dp;
 
 /**
  * 路径 被定义为一条从树中任意节点出发，沿父节点-子节点连接，达到任意节点的序列。同一个节点在一条路径序列中 至多出现一次 。该路径 至少包含一个 节点，且不一定经过根节点。
@@ -32,7 +32,7 @@ package com.mjw.offer;
  * 链接：https://leetcode.cn/problems/binary-tree-maximum-path-sum
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Solution_124 {
+public class LeetCode124 {
 
     public static int maxSum = Integer.MIN_VALUE;
 
@@ -71,8 +71,8 @@ public class Solution_124 {
     }
 
     public static int maxPathSum(TreeNode root) {
-       getCurrGain(root);
-       return maxSum;
+        getCurrGain(root);
+        return maxSum;
     }
 
     public static int getCurrGain(TreeNode root){

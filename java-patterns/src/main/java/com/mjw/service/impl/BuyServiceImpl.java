@@ -30,5 +30,7 @@ public class BuyServiceImpl implements BuyService {
     public void buySomething(double money, String payType) {
         Pay pay = payMap.get(payType);
         pay.pay(money);
+
+
     }
 }
