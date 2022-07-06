@@ -1,0 +1,18 @@
+# 服务端口
+server:
+  port: 8080
+# 配置rabbitmq服务
+spring:
+  rabbitmq:
+    username: mao
+    password: mao
+    virtual-host: mao_vhost
+    connection-timeout: 16000
+    addresses: 192.168.129.133:5672
+    # 启用消息确认模式
+    publisher-confirm-type: correlated
+
+    # 启用 return 消息模式
+    publisher-returns: true
+    template:
+      mandatory: true

@@ -1,0 +1,9 @@
+server:
+  port: 8081
+# 配置rabbitmq服务
+spring:
+  rabbitmq:
+    username: mao
+    password: mao
+    virtual-host: mao_vhost
+    addresses: 192.168.129.133:5672
